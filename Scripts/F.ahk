@@ -1,0 +1,3 @@
+F::
+Send, {MButton}
+Return
