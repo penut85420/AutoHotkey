@@ -34,16 +34,21 @@ Moving() {
     Send, {RButton Up}
 }
 
+; 離開腳本
 F12::
 ExitApp
 
+; 暫停腳本
 Pause::Suspend
 
+; 彈起所有按鍵
 ~F11::
 cont := False
+cont2 := False
 Release()
 return
 
+; 恐懼獵疊一下層數開始轉
 *~MButton::
 if cont {
     cont := false
@@ -59,6 +64,7 @@ if cont {
 }
 return
 
+; 恐懼獵開場疊層數後開始轉
 ~A::
 if cont {
     cont := false
@@ -75,6 +81,7 @@ if cont {
 }
 return
 
+; 左鍵連點
 ~R::
 while GetKeyState("R", "P") {
     MouseClick, left
@@ -82,6 +89,7 @@ while GetKeyState("R", "P") {
 }
 return
 
+; 右鍵連點
 ~D::
 while GetKeyState("D", "P") {
     MouseClick, right
@@ -89,6 +97,7 @@ while GetKeyState("D", "P") {
 }
 return
 
+; 天拳聖教
 ~W::
 if cont {
     cont := false
@@ -106,6 +115,7 @@ if cont {
 }
 return
 
+; 三光聖教六個技能連按
 ~X::
 if cont {
     cont := false
@@ -125,6 +135,7 @@ if cont {
 }
 return
 
+; 按下強制行走鍵解除腳本
 ~E::
 if cont {
     cont := False
@@ -132,7 +143,23 @@ if cont {
 }
 Return
 
+; 拆解裝備
 ~U::
 MouseClick, Left
 Send, {Enter}
 Return
+
+; 火鳥秘術師：二技連點
+~V::
+if cont2 {
+    cont2 := false
+    Release()
+} else {
+    cont2 := true
+    while cont2 {
+        Send, 2
+        Sleep, 20
+    }
+    Release()
+}
+return
