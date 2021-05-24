@@ -1,7 +1,7 @@
 #MaxThreadsPerHotkey 2
 #HotkeyInterval 128
 
-Release() {
+Release(Re:=True) {
 	Send, {1 Up}
     Send, {2 Up}
     Send, {3 Up}
@@ -9,7 +9,9 @@ Release() {
     Send, {LButton Up}
     Send, {RButton Up}
     Send, {Tab Up}
-    Reload
+    if Re {
+        Reload
+    }
 }
 
 UseSkills() {
@@ -64,6 +66,22 @@ if cont {
 }
 return
 
+; 恐懼獵疊一下層數開始轉
+*~W::
+if cont {
+    cont := false
+    Release()
+} else {
+    cont := true
+    UseSkills()
+    while cont {
+        Attacking(500)
+        Moving()
+    }
+    Release()
+}
+return
+
 ; 恐懼獵開場疊層數後開始轉
 ~A::
 if cont {
@@ -98,7 +116,7 @@ while GetKeyState("D", "P") {
 return
 
 ; 天拳聖教
-~W::
+~Z::
 if cont {
     cont := false
     Release()
@@ -156,6 +174,13 @@ if cont2 {
     Release()
 } else {
     cont2 := true
+    Send, {Tab Down}
+    Send, 1
+    Send, 2
+    Send, 4
+    Click, Left
+    Click, Right
+    Send, {Tab Up}
     while cont2 {
         Send, 2
         Sleep, 20
@@ -163,3 +188,13 @@ if cont2 {
     Release()
 }
 return
+
+; 回城中斷火鳥連點
+~T::
+cont2 := False
+Return
+
+; 開啟地圖中斷火鳥連點
+~M::
+cont2 := False
+Return
