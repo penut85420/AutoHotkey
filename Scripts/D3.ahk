@@ -116,42 +116,42 @@ while GetKeyState("D", "P") {
 return
 
 ; 天拳聖教
-~Z::
-if cont {
-    cont := false
-    Release()
-} else {
-    cont := true
-    Send, {1 Down}
-    Send, {2 Down}
-    Send, {3 Down}
-    while cont {
-        MouseClick, left
-        Sleep, 40
-    }
-    Release()
-}
-return
+; ~Z::
+; if cont {
+;     cont := false
+;     Release()
+; } else {
+;     cont := true
+;     Send, {1 Down}
+;     Send, {2 Down}
+;     Send, {3 Down}
+;     while cont {
+;         MouseClick, left
+;         Sleep, 40
+;     }
+;     Release()
+; }
+; return
 
 ; 三光聖教六個技能連按
-~X::
-if cont {
-    cont := false
-    Release()
-} else {
-    cont := true
-    while cont {
-        Send, 1
-        Send, 2
-        Send, 3
-        Send, 4
-        MouseClick, left
-        MouseClick, right
-        Sleep, 20
-    }
-    Release()
-}
-return
+; ~X::
+; if cont {
+;     cont := false
+;     Release()
+; } else {
+;     cont := true
+;     while cont {
+;         Send, 1
+;         Send, 2
+;         Send, 3
+;         Send, 4
+;         MouseClick, left
+;         MouseClick, right
+;         Sleep, 20
+;     }
+;     Release()
+; }
+; return
 
 ; 按下強制行走鍵解除腳本
 ~E::
@@ -168,26 +168,26 @@ Send, {Enter}
 Return
 
 ; 火鳥秘術師：二技連點
-~V::
-if cont2 {
-    cont2 := false
-    Release()
-} else {
-    cont2 := true
-    Send, {Tab Down}
-    Send, 1
-    Send, 2
-    Send, 4
-    Click, Left
-    Click, Right
-    Send, {Tab Up}
-    while cont2 {
-        Send, 2
-        Sleep, 20
-    }
-    Release()
-}
-return
+; ~V::
+; if cont2 {
+;     cont2 := false
+;     Release()
+; } else {
+;     cont2 := true
+;     Send, {Tab Down}
+;     Send, 1
+;     Send, 2
+;     Send, 4
+;     Click, Left
+;     Click, Right
+;     Send, {Tab Up}
+;     while cont2 {
+;         Send, 2
+;         Sleep, 20
+;     }
+;     Release()
+; }
+; return
 
 ; 回城中斷火鳥連點
 ~T::

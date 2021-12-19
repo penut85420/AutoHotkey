@@ -1,5 +1,6 @@
 #MaxThreadsPerHotkey 2
 #HotkeyInterval 128
+#IfWinActive ahk_class Diablo II
 
 ; 離開腳本
 F12::
@@ -23,3 +24,4 @@ while GetKeyState("D", "P") {
     Sleep, 40
 }
 return
+
